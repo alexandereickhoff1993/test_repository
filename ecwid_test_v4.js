@@ -56,3 +56,7 @@ if ( document.readyState !== 'loading' ) {
         addImage();
     });
 }
+
+
+//вызываем функцию проверки содержимого корзины
+checkCart();
