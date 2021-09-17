@@ -32,6 +32,18 @@ myDiv.innerHTML="<img src=\"https://i.postimg.cc/K8xk1W2S/car3.jpg\" style=\"dis
 parentElement.insertBefore(myDiv, childElement);
 }
 
+
+//объявляем функцию проверки содержимого корзины
+function checkCart() {
+    Ecwid.OnCartChanged.add(function(cart){
+    Ecwid.Cart.get(function(cart) {
+    if (cart.items.length == 5) {
+    myDiv.innerHTML="<p style=\"font-size:48px; font-weight:bold; color:#404040; font-family:Montserrat; text-align:center; margin:200px 0px;\">Вы собрали автомобиль!</p>";
+    }
+    })
+    });
+}
+
     
 //проверяем, загрузилась ли структура DOM; если да, вставляем картинку
 if ( document.readyState !== 'loading' ) {
@@ -41,14 +53,3 @@ if ( document.readyState !== 'loading' ) {
         addImage();
     });
 }
-
-
-//добавляем проверку при изменениях корзины
-/*Ecwid.OnCartChanged.add(function(cart){
-    Ecwid.Cart.get(function(cart) {
-    if (cart.items.length == 5) {
-    myDiv.innerHTML="<p style=\"font-size:48px; font-weight:bold; color:#404040; font-family:Montserrat; text-align:center; margin:200px 0px;\">Вы собрали автомобиль!</p>";
-    }
-    })
-    });
-}*/
