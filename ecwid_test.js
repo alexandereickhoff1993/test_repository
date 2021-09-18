@@ -37,15 +37,9 @@ parentElement.insertBefore(myDiv, childElement);
 
 
 //объявляем функцию проверки содержимого корзины
-function checkCart() {
-    Ecwid.OnCartChanged.add(function(cart){
-    Ecwid.Cart.get(function(cart) {
-    if (cart.items.length == 5) {
-    myDiv.innerHTML="<p style=\"font-size:48px; font-weight:bold; color:#404040; font-family:Montserrat; text-align:center; margin:200px 0px;\">Вы собрали автомобиль!</p>";
-    }
-    })
-    });
-}
+Ecwid.OnCartChanged.add(function(cart){
+    alert('корзина была изменена');
+});
 
     
 //проверяем, загрузилась ли структура DOM; если да, вставляем картинку
@@ -59,4 +53,4 @@ if ( document.readyState !== 'loading' ) {
 
 
 //вызываем функцию проверки содержимого корзины
-checkCart();
+//checkCart();
