@@ -15,7 +15,7 @@ parentElement.insertBefore(myDiv, childElement);
 
     
 //проверяем, загрузилась ли структура DOM; если да, вызываем функцию добавления картинки
-if ( document.readyState !== 'loading' ) {
+if (document.readyState !== 'loading') {
     addImage();
 } else {
     document.addEventListener('DOMContentLoaded', function () {
