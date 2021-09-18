@@ -18,9 +18,7 @@ parentElement.insertBefore(myDiv, childElement);
 if (document.readyState !== 'loading') {
     addImage();
 } else {
-    document.addEventListener('DOMContentLoaded', function () {
-        addImage();
-    });
+    document.addEventListener('DOMContentLoaded', addImage);
 }
 
 
