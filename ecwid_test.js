@@ -22,3 +22,15 @@ if ( document.readyState !== 'loading' ) {
         addImage();
     });
 }
+
+
+//проверяем, все ли товары в корзине
+Ecwid.OnCartChanged.add(function(cart){
+    
+    Ecwid.Cart.get(function(cart) {
+    if (cart.items.length == 5) {
+    myDiv.innerHTML="<p style=\"font-size:48px; font-weight:bold; color:#404040; font-family:Montserrat; text-align:center; margin:200px 0px;\">Вы собрали автомобиль!</p>";
+    }
+    })
+
+});
