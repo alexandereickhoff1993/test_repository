@@ -35,12 +35,6 @@ myDiv.innerHTML="<img src=\"https://i.postimg.cc/K8xk1W2S/car3.jpg\" style=\"dis
 parentElement.insertBefore(myDiv, childElement);
 }
 
-
-//объявляем функцию проверки содержимого корзины
-Ecwid.OnCartChanged.add(function(cart){
-    alert('корзина была изменена');
-});
-
     
 //проверяем, загрузилась ли структура DOM; если да, вставляем картинку
 if ( document.readyState !== 'loading' ) {
@@ -51,6 +45,8 @@ if ( document.readyState !== 'loading' ) {
     });
 }
 
+function apiLoadAlert() {
+    alert('API loaded');
+}
 
-//вызываем функцию проверки содержимого корзины
-//checkCart();
+document.addEventListener('Ecwid.OnAPILoaded', apiLoadAlert);
