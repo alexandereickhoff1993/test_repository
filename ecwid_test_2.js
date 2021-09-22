@@ -4,7 +4,7 @@ var myDiv = document.createElement('div');
 
 //объявляем функцию, вставляющую на страницу картинку с размеченными областями и обработчиками событий для этих областей
 function addImage() {
-var parentElement = document.getElementById('ec-grid')[0];
+var parentElement = document.getElementsByClassName('ec-grid')[0];
 
 var childElement = parentElement.getElementsByTagName('div')[0];
 
