@@ -33,3 +33,5 @@ parentElement.insertBefore(myDiv, childElement);
 } else {
     document.addEventListener('DOMContentLoaded', addImage);
 }*/
+
+addImage();
